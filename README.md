@@ -1,4 +1,4 @@
-///
+```
 git init(initialise git repo)
 git status (to check status)
 git log (to check history)
@@ -14,4 +14,4 @@ git stash pop(to reterive)
 git show(show last commit)
 git remote add origin ulr (to connect github)
 git push origin branch_name (to push in remote)
-///
+```
