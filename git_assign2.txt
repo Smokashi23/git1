@@ -1,0 +1,108 @@
+                      Git Assignment 2
+
+Q1. What is cherry-pick? Explain the use case of it and also write steps to do it.
+Ans:-
+Cherry picking the commit means applying commit from one branch to another
+
+Use Case
+1.Merging specific commits
+    If we use merge or rebase to merge commits all the commits will be merged but when we 
+    want  only specific commit to be merged we can use cherry pick
+2. For bug fix
+     If we discover bug fix in one branch and want to apply in another branch 
+     Cherry pick is used
+
+Steps
+ Step 1 -Make changes in feature 1 branch commit them
+             git commit -m “commit 1”
+Step2- To see id
+           git log
+           Copy the id of commit we want to cherry pick
+Step3 - shift to branch where we want to add cherry commit
+           git checkout -
+Step 4 -now cherry pick the commit
+          git cherry-pick id_of_commit
+
+
+Q2. How to set multiple remote repositories for the same project? Explain the use case. you should have a working demo of it.
+Ans
+    We can set multiple repositories to same project on same platform or on different
+
+Use case
+To have backup of the project
+Useful for collaboration
+Useful of open source projects
+Different team prefer different platform in that case this is useful
+
+
+Q3 How to combine two commits into one commit? For Example, you have 4 different commits C1, C2, C3, and  C4 and you to combine C2 and C3 into one single commit
+
+Steps
+
+Step1 - Add multiple commits
+Step2 - select the commit range
+            git rebase -i HEAD~4
+Step3- now a different editor will open. Change pick to s to squash the commit
+Step 4 - Press ESC : WQ to exit 
+Step 5- to see the combined commits
+            git log
+
+
+Q4  How to delete one commit or multiple commits permanently Write command for it
+
+Ans
+1.To delete most recent commit use command
+ git reset -- hard HEAD^
+
+
+2.  To delete multiple commits
+      git reset -- hard reset HEAD~no_commits_want_to_delet
+
+
+Q5. Difference between --force push and --force-with-lease, You have to show the use of both, also you have to show in what scenario --force-with-lease is used?
+
+
+Ans-
+
+Git push -- force
+   git --force will override the remote branch with your local branch without checking if there are new changes on remote branches that are not your local branch. This will create conflict if we are overriding the changes by others.
+     Git -- force push should be use with caution.
+Uses:-
+ Suppose one of the feature branch has in accurate working history the we can use force push to update remote repo according to local
+Command
+        git push --force origin branch_name
+
+
+
+Git -- force -with lease
+
+Git --force-with-lease is a safer alternative for the push – force.
+It prevents the over writing on remote branch .It will check before pushing.
+Uses
+  Prevent over writing of the commits.Safer than force push.
+Command
+     Before pushing check of there are changes
+        git fetch
+     Now use push
+       git push --force-with-lease origin branch_name
+Senario
+    Suppose  we are working as a team.my team mate and I clone the project and working on it.
+    Now I want to push those changes to remote but my mate already had pushed some changes
+    to remote git push will check the conflict and pushing will be done smothly
+
+
+Q6. How to un stage changes from the staged area. write commands for it.
+
+Ans-
+   1.To un stage changes from staging area we can use command
+          git reset
+   This does not discards the changes only moves them from staging area to working directory
+To un stage specific file
+             git restore --staged file_name
+
+
+Or we can use
+        git reset file_name
+
+
+
