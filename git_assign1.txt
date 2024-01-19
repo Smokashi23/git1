@@ -1,0 +1,45 @@
+Git Assignment 1
+
+
+Git basic commands
+git init(initialise git repo)
+git status (to check status)
+git log (to check history)
+git checkout -b branchname(to create branch)
+git add file_name (to add file )
+git  commit -m "first commit" (to add save changes to local)
+git commit --amend(to add multiple line commit)
+git checkout -b branchname (to create branch)
+git  branch -d branch_name (to delete branch)
+git reset --soft HEAD~(to undo last commit)
+git reset --hard HEAD~(to undo latest staging)
+git stash(to store local in form of stack)
+git stash pop(to retrieve)
+git show(show last commit)
+git remote add origin url (to connect github)
+git push origin branch_name (to push in remote)
+
+
+Q1. How to commit multiple line 
+Ans :- git commit -m “commit 1” -m “commit 2”
+
+
+
+Q2 How to change commit message
+Ans :- 
+    Step 1- Write command git – amend
+    Step 2 - Edit the commit message by entering ESC+I key
+    Step 3- press ESC Shift ++ZZ
+
+Q3 How to get my code back if i do git stash
+
+Ans ;-
+Git stash is used to save changes temporarily
+Steps - make changes use command
+            Git stash
+Step2  - to see the list 
+             Git stash list
+Step3 - to apply apply changes
+            Git stash apply 
+                 Or 
+            Git stash pop
